@@ -10,6 +10,17 @@ const index = (req, res) => {
     })
 }
 
+const show = (req, res) => {
+    User.findById(req.params.id, (error, user) => {
+        if (error) {
+            return res.json({ success: false, error: error })
+        } else {
+            return res.json({ success: true, user: user })
+        }
+    })
+}
+
 export default {
-    index
+    index,
+    show
 }
