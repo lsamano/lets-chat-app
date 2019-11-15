@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import './App.css';
-import Login from './Login';
+import pages from './pages';
 
 function App() {
   const [ user, setUser ] = useState({})
@@ -8,7 +8,7 @@ function App() {
   return (
     <div>
       Hello, { user.username }.
-      <Login setUser={setUser} />
+      <pages.LoginPage setUser={setUser} />
     </div>
   );
 }
