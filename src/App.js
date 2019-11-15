@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import './App.css';
 import pages from './pages';
+import { Switch, Route } from 'react-router-dom';
 
 function App() {
   const [ user, setUser ] = useState({})
@@ -8,7 +9,9 @@ function App() {
   return (
     <div>
       Hello, { user.username }.
-      <pages.LoginPage setUser={setUser} />
+      <Switch>
+        <Route path='/' render={routerProps => <pages.LoginPage {...routerProps} setUser={setUser} />} />
+      </Switch>
     </div>
   );
 }
