@@ -1,13 +1,33 @@
-import React from 'react'
+import React, { useState } from 'react'
 import PropTypes from 'prop-types'
 
-const Login = (props) => {
+const Login = ({ setUser }) => {
+  const [ username, setUsername ] = useState("")
+  const [ password, setPassword ] = useState("")
+
+  const handleSubmit = event => {
+    event.preventDefault()
+    // run auth fetch
+    setUser({
+      username
+    })
+  }
+
   return (
     <div>
     Please login.
-    <form>
-    <input name='username' placeholder='Username...' />
-    <input name='password' type='password' placeholder='Password...' />
+    <form onSubmit={handleSubmit}>
+    <input
+      name='username'
+      placeholder='Username...'
+      value={ username }
+      onChange={ event => setUsername(event.target.value)} />
+    <input
+      name='password'
+      type='password'
+      placeholder='Password...'
+      value={ password }
+      onChange={ event => setPassword(event.target.value)} />
     <input type='submit'/>
     </form>
     </ div>
@@ -15,3 +35,7 @@ const Login = (props) => {
 }
 
 export default Login
+
+Login.propTypes = {
+  setUser: PropTypes.func.isRequired
+}

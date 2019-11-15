@@ -1,11 +1,14 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './App.css';
 import Login from './Login';
 
 function App() {
+  const [ user, setUser ] = useState({})
+
   return (
     <div>
-      <Login />
+      Hello, { user.username }.
+      <Login setUser={setUser} />
     </div>
   );
 }
