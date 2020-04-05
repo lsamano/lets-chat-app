@@ -1,6 +1,11 @@
 # Let's Chat App
-Chatroom app.
+A chatroom app.
 
 # Current Features
-- WebSockets
+- MERN Stack
+- MongoDB Atlas (DBaaS)
+- User Model and Controller
 - Redux
+
+# Setup
+Run `yarn`, then `yarn start` in one tab for the frontend and `yarn startup` for the server.
